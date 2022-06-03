@@ -1,0 +1,181 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.36.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Ibrahim Somuncu, NULL, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.36.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.36.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      UL2CM3.DLL V1.164.0.0
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+C:\Yazilim\STM32\25_HCSR04_ULTRASONIK_MESAFE_SENSORU\ultrasonik_sensor.uvprojx
+Project File Date:  03/01/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+main.c(6): warning: no previous extern declaration for non-static variable 'distance' [-Wmissing-variable-declarations]
+float distance=0;
+      ^
+main.c(6): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float distance=0;
+^
+main.c(9): warning: no previous prototype for function 'gpioConfig' [-Wmissing-prototypes]
+void gpioConfig(){
+     ^
+main.c(9): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void gpioConfig(){
+^
+static 
+main.c(9): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+void gpioConfig(){
+               ^
+main.c(43): warning: no previous prototype for function 'delayUS' [-Wmissing-prototypes]
+void delayUS(uint32_t time){
+     ^
+main.c(43): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void delayUS(uint32_t time){
+^
+static 
+main.c(69): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+        tempDistance=(float)time*0.034;
+                    ~~~~~~~~~~~~^~~~~~
+main.c(69): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+        tempDistance=(float)time*0.034;
+                     ^~~~~~~~~~~~
+main.c(49): warning: no previous prototype for function 'HCSR04_Read' [-Wmissing-prototypes]
+float HCSR04_Read(){
+      ^
+main.c(49): note: declare 'static' if the function is not intended to be used outside of this translation unit
+float HCSR04_Read(){
+^
+static 
+main.c(49): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+float HCSR04_Read(){
+                 ^
+main.c(1): warning: In file included from...
+C:/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F100RB\stm32f10x_conf.h(90): warning: In file included from...
+C:/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/inc\stm32f10x_usart.h(49): warning: padding size of 'USART_InitTypeDef' with 2 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+main.c(77): warning: no previous prototype for function 'uartConfig' [-Wmissing-prototypes]
+void uartConfig(){
+     ^
+main.c(77): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void uartConfig(){
+^
+static 
+main.c(77): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+void uartConfig(){
+               ^
+main.c(98): warning: expression result unused [-Wunused-value]
+      *string++;
+      ^~~~~~~~~
+main.c(94): warning: no previous prototype for function 'uartTransmit' [-Wmissing-prototypes]
+void uartTransmit(char *string){
+     ^
+main.c(94): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void uartTransmit(char *string){
+^
+static 
+main.c(110): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+                sprintf(message,"Mesafe: %f cm \n",distance);
+                ~~~~~~~                            ^~~~~~~~
+main.c(112): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+                if(distance>=5.0){
+                   ^~~~~~~~~~
+main.c(117): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+                }if(distance<5.0){
+                    ^~~~~~~~~
+main.c(110): warning: 'sprintf' will always overflow; destination buffer has size 20, but format string expands to at least 22 [-Wfortify-source]
+                sprintf(message,"Mesafe: %f cm \n",distance);
+                ^
+main.c(7): warning: no previous extern declaration for non-static variable 'message' [-Wmissing-variable-declarations]
+char message[20];
+     ^
+main.c(7): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char message[20];
+^
+18 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=6916 RO-data=500 RW-data=0 ZI-data=1656  
+".\Objects\ultrasonik_sensor.axf" - 0 Error(s), 18 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.0.pack
+                Keil.STM32F1xx_DFP.2.4.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: GPIO Version: 1.3
+   * Component: Startup Version: 1.0.0
+   * Component: Framework Version: 3.6.0
+   * Component: GPIO Version: 3.6.0
+   * Component: RCC Version: 3.6.0
+   * Component: USART Version: 3.6.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\STM32F100RB
+  .\RTE\_Target_1
+  C:\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include
+  C:\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\StdPeriph_Driver\inc
+  C:\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\RTE_Driver
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+
+   * Component: Keil::Device:GPIO:1.3
+      Source file:   RTE_Driver\GPIO_STM32F10x.c
+      Include file:  RTE_Driver\GPIO_STM32F10x.h
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\system_stm32f10x.c
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Include file:  RTE_Driver\Config\RTE_Device.h
+      Source file:   Device\Source\ARM\startup_stm32f10x_md_vl.s
+
+   * Component: Keil::Device:StdPeriph Drivers:Framework:3.6.0
+      Source file:   Device\StdPeriph_Driver\src\misc.c
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
+      Include file:  Device\StdPeriph_Driver\inc\misc.h
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_conf.h
+      Include file:  Device\StdPeriph_Driver\templates\stm32f10x_it.h
+
+   * Component: Keil::Device:StdPeriph Drivers:GPIO:3.6.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_gpio.h
+
+   * Component: Keil::Device:StdPeriph Drivers:RCC:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_rcc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_rcc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:USART:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_usart.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_usart.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
